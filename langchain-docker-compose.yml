@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  hr-qa:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
+      - DASHSCOPE_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+      - DASHSCOPE_MODEL_NAME=qwen-turbo
+    volumes:
+      - ./人事管理流程.docx:/app/人事管理流程.docx  # 如果需要在容器内访问这个文件
