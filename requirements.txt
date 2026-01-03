@@ -1,0 +1,24 @@
+# 完全兼容的版本组合
+python-dotenv==1.0.0
+pydantic==2.5.3
+
+# HTTP 相关 - 已测试兼容
+h11==0.14.0
+httpcore==0.17.3
+httpx==0.25.2
+
+# Hugging Face 相关
+huggingface-hub==0.20.3
+tokenizers==0.19.1
+transformers==4.41.2
+
+# OpenAI 相关
+openai==1.30.2
+langchain-openai==0.2.3
+
+# Gradio - 选择一个较新但兼容的版本
+gradio==4.13.0
+
+# 其他 RAG 相关
+chromadb==0.4.22
+sentence-transformers==2.2.2
