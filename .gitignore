@@ -3,3 +3,4 @@
 .env
 *.pdf
 .idea
+__pycache__
