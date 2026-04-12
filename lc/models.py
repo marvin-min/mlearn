@@ -1,5 +1,7 @@
 import os
 import dotenv
+from langchain_community.embeddings import DashScopeEmbeddings
+
 dotenv.load_dotenv()
 
 from langchain_openai import ChatOpenAI
@@ -17,3 +19,15 @@ def get_client(api_key=DASHSCOPE_API_KEY, base_url=DASHSCOPE_BASE_URL, model_nam
                       base_url=base_url,
                       model=model_name)
   return client
+
+def get_embeddings():
+  # 向量化模型，它是 Retriever 的“眼睛”
+  return DashScopeEmbeddings(
+    model="text-embedding-v3",
+    dashscope_api_key=DASHSCOPE_API_KEY
+  )
+
+from langchain_core.globals import set_debug
+set_debug(True)
+def debug_mode(flag=True):
+  set_debug(flag)
